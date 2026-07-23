@@ -3,7 +3,25 @@
 Public marketing + funnel site for **SmartOrg** (smartorg.tools). Caleb Allen's
 nonprofit AI build practice, program name *The Six Week Build Plan*.
 
-Static HTML, zero build step. Deployed on Vercel.
+Static HTML. Page copy is edited in one place (`COPY.md`) and built into the
+pages. Deployed on Vercel.
+
+## Editing copy
+
+All editable copy for every funnel page lives in **`COPY.md`**, organized by page
+and section. To change wording:
+
+1. Edit the text under the relevant `### key` heading in `COPY.md`. You can use
+   `**bold**` and `[link text](https://url)`; everything else is plain text.
+   Do not rename or remove the `### key` lines.
+2. Run `npm run build` (or `node build-copy.mjs`). This injects your copy into the
+   HTML pages.
+3. Commit and push. Vercel also runs the build on deploy, so a pushed `COPY.md`
+   change flows to the live site on its own.
+
+`npm run check` validates that `COPY.md` and the pages are in sync without writing
+anything. Under the hood, each editable element carries a `data-copy="page.section.field"`
+attribute that matches a key in `COPY.md`.
 
 ## Pages (the funnel)
 
@@ -20,9 +38,10 @@ Static HTML, zero build step. Deployed on Vercel.
 
 ## Deploy
 
-Zero-config static site. Connect the repo to Vercel; no framework preset, no
-build command, output = repo root. `cleanUrls` serves pages without the `.html`
-extension.
+Connect the repo to Vercel; no framework preset. Build command is
+`node build-copy.mjs` and the output directory is the repo root (both set in
+`vercel.json`), so the copy is compiled from `COPY.md` on every deploy.
+`cleanUrls` serves pages without the `.html` extension.
 
 ## Not in this repo (intentionally)
 

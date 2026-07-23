@@ -1,0 +1,10 @@
+{
+  "name": "smartorg",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SmartOrg funnel site (smartorg.tools). Copy is edited in COPY.md and built into the pages.",
+  "scripts": {
+    "build": "node build-copy.mjs",
+    "check": "node build-copy.mjs --check"
+  }
+}
