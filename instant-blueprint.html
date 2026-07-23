@@ -161,7 +161,7 @@ a { color:var(--green); text-decoration-color:var(--gold); text-underline-offset
     <div class="exhibit"><span class="roman">III.</span><span class="caps">The real version of this page</span></div>
     <p>This estimate used six sliders. The real Blueprint uses <em>your</em> numbers, in <em>your</em> organization's branding, with quotes from your own team and a line-item proposal: built from one short Details Call (about 20 minutes, not a sales pitch), back to you <strong>30 minutes after we hang up</strong>. Free either way.</p>
     <div class="cta">
-      <a class="btn" href="__INTAKE_URL__">Book your Details Call · quote in 30 min</a>
+      <a class="btn" href="https://calendly.com/caleb-hopescry/30min">Book your Details Call · quote in 30 min</a>
       <p class="meta" style="margin-top:1rem">Prefer to poke around first? <a href="case-study-evolor.html">Read how I built our own platform</a> · <a href="donor-file-health-check.html">Test your donor file</a></p>
     </div>
   </div>
@@ -209,7 +209,7 @@ $('run').addEventListener('click', () => {
     `<div class="leak"><span>${l[0]}</span><span class="dots"></span><span class="amt num">$${Math.floor(l[1]/100)*100 .toLocaleString()}/yr</span></div>`).join('');
   $('r-build').textContent = b.name;
   $('r-build-d').textContent = b.d;
-  $('r-price').innerHTML = `<strong>Tool range: $10,000 to $25,000</strong> · 2-3 weeks · custom-quoted on your Details Call · platform-level builds run $60,000 to $120,000.`;
+  $('r-price').innerHTML = `<strong>A single tool starts at $15,000</strong> · built in 2-4 weeks · custom-quoted on your Details Call. Need the whole org AI-ready? That starts with a two-week AI Opportunity Roadmap ($15,000, credited toward the work).`;
   if ((+$('rev').value) === 0) {
     $('r-price').innerHTML += ' <span class="meta">Honest note: under $3M, a build this size is usually the wrong spend. Start with the free teaching and tools; they will genuinely get you far.</span>';
   }
